@@ -15,16 +15,17 @@ import com.mysql.cj.util.StringUtils;
 
 import edu.infnet.comercio.negocio.dao.UsuarioDAO;
 import edu.infnet.comercio.negocio.modelo.Usuario;
+import edu.infnet.comercio.negocio.servico.UsuarioService;
 
 @WebServlet(urlPatterns = {"/UserSrv"})
 public class UserServlet extends HttpServlet {
 
 	private static Logger logger = LogManager.getLogger(UserServlet.class);
 	
-	private UsuarioDAO dao;
+	private UsuarioService service;
 	
 	public UserServlet() {
-		dao = new UsuarioDAO();
+		this.service = new UsuarioService();
 	}
 	
 	/**
@@ -52,10 +53,17 @@ public class UserServlet extends HttpServlet {
 			//TODO APLICAR VALORES AO MODELO
 			Usuario usuario = new Usuario(login, senha);
 			//TODO EXECUTAR LOGICA DE NEGOCIO
-			dao.save(usuario);
+			service.save(usuario);
+		}
+		else {
+			if(service.validarUsuario(login, senha)) {
+				req.getSession().setAttribute("user", login);
+			}else {
+				req.setAttribute("error", "Login ou senha inválidos!");
+			}
+			
 		}
 		
-		req.getSession().setAttribute("user", login);
 		req.getRequestDispatcher("pages/home.jsp")
 				.forward(req, resp);
 	}
