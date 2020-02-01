@@ -9,6 +9,7 @@
 <title>Insert title here</title>
 </head>
 <body>
+	
 	<jsp:include page="pages/templates/header.jsp"></jsp:include>
 
 	<div class="container">
@@ -50,8 +51,21 @@
 		       
 		       </form>
 		       
-		       
+		       <div class="align-items-center">
+				<a
+				   href="<c:url value='/logon.jsp' />"
+				   class="badge badge-light mt-4" 
+				   >
+				   Clique aqui para novo cadastro
+				   </a>
+				
+							
+				</div>
+			
+			
 		   </div>
+		   
+		   
 		</div>
 		
 		
@@ -59,6 +73,7 @@
 		
 	</div>
 
+			
 
 
 </body>
