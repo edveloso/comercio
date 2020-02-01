@@ -1,4 +1,4 @@
-package edu.infnet.comercio.controler;
+package edu.infnet.comercio.web.servlet;
 
 import java.io.IOException;
 

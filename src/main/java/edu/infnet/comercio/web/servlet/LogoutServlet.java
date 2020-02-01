@@ -1,4 +1,4 @@
-package edu.infnet.comercio.controler;
+package edu.infnet.comercio.web.servlet;
 
 import java.io.IOException;
 
@@ -8,8 +8,8 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-@WebServlet(urlPatterns = {"/ComprasSrv"})
-public class ComprasServlet extends HttpServlet {
+@WebServlet(urlPatterns = {"/LogoutSrv"})
+public class LogoutServlet extends HttpServlet {
 
 	/**
 	 * 
@@ -18,10 +18,8 @@ public class ComprasServlet extends HttpServlet {
 
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-		
-		
-		
-		req.getRequestDispatcher("pages/venda.jsp")
+		req.getSession().invalidate();
+		req.getRequestDispatcher("/login.jsp")
 				.forward(req, resp);
 	}
 		
