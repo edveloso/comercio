@@ -51,8 +51,21 @@
 		       </form>
 		       
 		       
+		       
+		       
+		       
 		   </div>
+		   
+		   
 		</div>
+		<div class="row justify-content-center">
+		   <div class="col-8">
+		   	
+		   		<div class="align-items-center ">
+		   			<a class="badge badge-light text-center mt-4" href="<c:url value='/logon.jsp' />">Clique aqui para um novo cadastro</a>
+		   			</div>
+		   </div>
+		   </div>
 		
 		
 		
