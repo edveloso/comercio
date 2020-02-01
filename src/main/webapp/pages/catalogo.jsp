@@ -32,7 +32,7 @@
 							<h5 class="card-title">${prod.nome}</h5>
 							<p class="card-text">
 							   ${prod.descricao}
-							   <br/>
+							   <br>
 							   <h2> ${prod.preco} </h2>
 							</p>
 							<a href="#" class="btn btn-success">Comprar</a>
