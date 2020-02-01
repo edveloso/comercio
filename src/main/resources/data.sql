@@ -11,4 +11,10 @@ insert into produto (nome, descricao, preco)
 		4500.00
 	);
 	
+insert into produto (nome, descricao, preco) 
+	values ('iphone.jpeg',
+		'outro vindo do banco',
+		100.00
+	);	
+	
 select * from produto;	

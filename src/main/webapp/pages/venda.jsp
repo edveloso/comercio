@@ -22,18 +22,27 @@
 
 				<div class="row pt-4 ">
 
-
+	
+			<c:forEach  var="prod"  items="${lista_produtos}">
+			
+			
 					<div class="card m-2 p-2" style="width: 18rem;">
 						<img class="card-img-top" width="200px" alt="iphone"
 							src="${pageContext.request.contextPath}/img/iphone.jpeg">
 						<div class="card-body">
-							<h5 class="card-title">Iphone</h5>
-							<p class="card-text">Um exemplo de texto rápido para
-								construir o título do card e fazer preencher o conteúdo do card.</p>
+							<h5 class="card-title">${prod.nome}</h5>
+							<p class="card-text">${prod.descricao}
+							    - ${prod.preco}
+							</p>
+							
 							<a href="#" class="btn btn-success">Visitar</a>
 						</div>
 					</div>
 					
+					
+			</c:forEach>	
+			
+				
 
 				</div>
 			</div>
