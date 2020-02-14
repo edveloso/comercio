@@ -13,6 +13,7 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
 import edu.infnet.comercio.negocio.dao.ProdutoDAO;
+import edu.infnet.comercio.negocio.dao.ProdutoJPADAO;
 import edu.infnet.comercio.negocio.modelo.Produto;
 
 @WebServlet(urlPatterns = {"/ComprasSrv"})
@@ -20,8 +21,12 @@ public class ComprasServlet extends HttpServlet {
 
 	private ProdutoDAO dao;
 	
+	private ProdutoJPADAO jpaDao;
+	
 	public ComprasServlet() {
 		this.dao = new ProdutoDAO();
+		jpaDao = new ProdutoJPADAO();
+		
 	}
 	
 	/**
@@ -33,6 +38,9 @@ public class ComprasServlet extends HttpServlet {
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		logger.debug("entrando no doget");
+		
+		jpaDao.save(new Produto("prod1", "meu produto", 20.0, ""));
+		
 		List<Produto> produtos = dao.findAllProdutos();
 		
 		req.setAttribute("lista_produto", produtos);
