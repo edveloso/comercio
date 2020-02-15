@@ -1,5 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-	pageEncoding="ISO-8859-1"%>
+	pageEncoding="utf-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
 <html>
@@ -9,9 +9,6 @@
 </head>
 <body>
 	<jsp:include page="templates/header.jsp"></jsp:include>
-
-
-
 
 	<div class="container">
 
@@ -25,7 +22,7 @@
 				
 					<div class="card m-2 p-2" style="width: 18rem;">
 						<img class="card-img-top" width="200px" alt="iphone"
-							src="${pageContext.request.contextPath}/img/${prod.foto}">
+							src="${prod.foto}">
 						<div class="card-body">
 							<h5 class="card-title">${prod.nome}</h5>
 							<p class="card-text">

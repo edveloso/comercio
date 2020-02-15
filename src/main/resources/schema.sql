@@ -40,3 +40,10 @@ insert into produto (foto, nome, descricao, preco)
         );      
         
 select * from produto;        
+
+ALTER TABLE produto MODIFY foto blob(100000) ;
+
+select * from hibernate_sequence ;
+
+update hibernate_sequence set next_val = 7;
+
