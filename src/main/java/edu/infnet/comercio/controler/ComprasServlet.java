@@ -9,6 +9,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import edu.infnet.comercio.negocio.dao.JpaDAO;
 import edu.infnet.comercio.negocio.dao.ProdutoDAO;
 import edu.infnet.comercio.negocio.dao.ProdutoJPADAO;
 import edu.infnet.comercio.negocio.modelo.Produto;
@@ -17,7 +18,7 @@ import edu.infnet.comercio.negocio.modelo.Produto;
 public class ComprasServlet extends HttpServlet {
 
 	private ProdutoDAO dao;
-	private ProdutoJPADAO jpadao;
+	private JpaDAO jpadao;
 	
 	public ComprasServlet() {
 		this.dao = new ProdutoDAO();
