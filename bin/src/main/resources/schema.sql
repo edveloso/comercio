@@ -1,8 +1,8 @@
---create database comercio;
+create database comercio;
 
---show databases;
+show databases;
 
---use comercio;
+use comercio;
 create table usuario (
      id int not null primary key auto_increment,
      login varchar(80),
@@ -37,6 +37,4 @@ insert into produto (foto, nome, descricao, preco)
         'Carrinho de Bebê Agile Cinza',
         'O Carrinho Multikids tem estrutura de alumínio, por isso é mais leve, resistente e versátil. Possui cinto de segurança de 5 pontos, capota retrátil com visor e tela, 3 rodas com travas e freios.',
         355.70
-        );      
-        
-select * from produto;        
+        );        

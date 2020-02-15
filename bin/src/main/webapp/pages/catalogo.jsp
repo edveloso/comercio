@@ -10,7 +10,9 @@
 <body>
 	<jsp:include page="templates/header.jsp"></jsp:include>
 
-
+	<c:if test="${empty sessionScope.user}">
+		<jsp:forward page="../login.jsp"></jsp:forward>
+	</c:if>
 
 
 	<div class="container">
