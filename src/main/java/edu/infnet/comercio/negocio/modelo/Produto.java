@@ -1,9 +1,12 @@
 package edu.infnet.comercio.negocio.modelo;
 
-import javax.persistence.Column;
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
+import javax.persistence.ForeignKey;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 
 @Entity
 public class Produto {
@@ -20,6 +23,10 @@ public class Produto {
 	private Double preco;
 	
 	private String foto;
+	
+	@ManyToOne(cascade = CascadeType.ALL)
+	@JoinColumn(name = "categoria_fk")
+	private Categoria categoria;
 	
 	//ctrl espaco enter (contrutor vazio)
 	//ctrl 3 gcuf e ggas
@@ -83,6 +90,16 @@ public class Produto {
 
 	public void setFoto(String foto) {
 		this.foto = foto;
+	}
+
+
+	public Categoria getCategoria() {
+		return categoria;
+	}
+
+
+	public void setCategoria(Categoria categoria) {
+		this.categoria = categoria;
 	}
 	
 
