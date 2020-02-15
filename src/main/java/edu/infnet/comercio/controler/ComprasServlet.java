@@ -39,7 +39,7 @@ public class ComprasServlet extends HttpServlet {
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		logger.debug("entrando no doget");
 		
-		jpaDao.save(new Produto("prod1", "meu produto", 20.0, ""));
+//		jpaDao.save(new Produto("prod1", "meu produto", 20.0, ""));
 		
 		List<Produto> produtos = dao.findAllProdutos();
 		

@@ -24,8 +24,9 @@ public class LogoutServlet extends HttpServlet {
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		logger.debug("doget");
 		req.getSession().invalidate();
-		req.getRequestDispatcher("/login.jsp")
-				.forward(req, resp);
+		resp.sendRedirect("/comercio/login.jsp");
+//		req.getRequestDispatcher("/login.jsp")
+//				.forward(req, resp);
 	}
 		
 }

@@ -10,6 +10,7 @@ import javax.servlet.ServletRequest;
 import javax.servlet.ServletResponse;
 import javax.servlet.annotation.WebFilter;
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -34,14 +35,14 @@ public class LogFilter implements Filter {
 			   || uri.contains("LogoutSrv")
 			   || uri.contains("login.jsp")
 			   || uri.contains("logon.jsp")
-			   || uri.contains("index.jsp")
-			   || uri.equals("/comercio/")
+			   || uri.contains("index.jsp")			   
 			   || uri.contains("/comercio/js")
 			   || uri.contains("/comercio/img")
 			   || uri.contains("/comercio/css")
 					)
 				) {
-			request.getRequestDispatcher("login.jsp");
+			((HttpServletResponse)response).sendRedirect("/comercio/login.jsp");
+//			request.getRequestDispatcher("login.jsp");
 		} else
 
 			chain.doFilter(request, response);

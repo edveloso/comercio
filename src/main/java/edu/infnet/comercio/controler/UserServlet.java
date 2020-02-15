@@ -13,7 +13,6 @@ import org.apache.logging.log4j.Logger;
 
 import com.mysql.cj.util.StringUtils;
 
-import edu.infnet.comercio.negocio.dao.UsuarioDAO;
 import edu.infnet.comercio.negocio.modelo.Usuario;
 import edu.infnet.comercio.negocio.servico.UsuarioService;
 

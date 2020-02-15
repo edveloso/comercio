@@ -21,7 +21,7 @@ public class MysqlConection {
 					+ "?useTimezone=true&serverTimezone=UTC"
 					+ "&createDatabaseIfNotExist=true";
 			String user = "root";
-			String pass = "root00";
+			String pass = "123456";
 			try {
 				Class.forName("com.mysql.cj.jdbc.Driver");
 				con = DriverManager.getConnection(url, user, pass);
