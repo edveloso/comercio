@@ -50,8 +50,10 @@ public class UserServlet extends HttpServlet {
 			if(StringUtils.isEmptyOrWhitespaceOnly(login)) {
 			}
 			//TODO CONVERTER OS VALORES
+			
 			//TODO APLICAR VALORES AO MODELO
 			Usuario usuario = new Usuario(login, senha);
+			
 			//TODO EXECUTAR LOGICA DE NEGOCIO
 			service.save(usuario);
 		}
@@ -63,7 +65,7 @@ public class UserServlet extends HttpServlet {
 			}
 			
 		}
-		
+		//TODO RESTAURAR VISÃO
 		req.getRequestDispatcher("pages/home.jsp")
 				.forward(req, resp);
 	}
